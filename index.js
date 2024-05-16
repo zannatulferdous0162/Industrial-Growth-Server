@@ -59,7 +59,12 @@ async function run() {
          const result=await jobs.insertOne(createData)
          res.send(result)
     })
-   
+    app.post('/applys',async(req,res)=>{
+         const createData=req.body;
+         const result=await apply.insertOne(createData)
+         res.send(result)
+    })
+
     
     app.post('/jwt',(req,res)=>{
       const user= req.body;
